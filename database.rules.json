@@ -1,0 +1,10 @@
+{
+  "rules": {
+    ".read": "auth.token.superadmin === true",
+    ".write": "auth.token.superadmin === true",
+    "$mobile": {
+      ".read": "auth.uid != null && data.child('mobile').val() == auth.token.mobile",
+      ".write": "auth.uid != null && data.child('mobile').val() == auth.token.mobile"
+    }
+  }
+}
